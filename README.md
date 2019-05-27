@@ -14,21 +14,21 @@ kini_k.sh : authorize existing key(?)
 (1) Generate your key
 > source create_key.sh
 
-(2) Enter following command. PLEASE NOTE THAT <USERNAME>@CERN.CH must be capital letters!
-  (e.g.) JHCHOI@CERN.CH
+(2) Enter following command. PLEASE NOTE THAT <USERNAME>@CERN.CH is not capital letters!
+  (e.g.) jhchoi@CERN.CH
 
-add_entry -password -p USERNAME@CERN.CH -k 1 -e arcfour-hmac-md5
+add_entry -password -p <USERNAME>@CERN.CH -k 1 -e arcfour-hmac-md5
 ==>your CERN account passwd
 
-add_entry -password -p USERNAME@CERN.CH -k 1 -e aes256-cts
+add_entry -password -p <USERNAME>@CERN.CH -k 1 -e aes256-cts
 ==>your CERN account passwd
 
-wkt USERNAME.keytab
+wkt <USERNAME>.keytab
 ===>then, ctrl + D
 
 (3) Then,
 
-> kinit -k -t USERNAME.keytab USERNAME@CERN.CH
+> kinit -k -t <USERNAME>.keytab <USERNAME>@CERN.CH
 
 
 
